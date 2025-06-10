@@ -1,6 +1,37 @@
-node_modules/
+# Environment variables
 .env
-.DS_Store
+
+# Dependencies
+node_modules/
 package-lock.json
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Database
+*.sqlite
+*.sqlite3
+
+# IDE - VSCode
+.vscode/
+*.code-workspace
+
+# System Files
+.DS_Store
+Thumbs.db
+
+# Bot specific
+config.json
+settings.json
+data/
+
 .replit
 replit.nix 
