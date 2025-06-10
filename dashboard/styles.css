@@ -1,0 +1,243 @@
+/* Main Layout */
+:root {
+    --sidebar-width: 250px;
+    --primary-color: #7289da;
+    --secondary-color: #2c2f33;
+    --background-color: #23272a;
+    --text-color: #ffffff;
+    --card-bg: #2c2f33;
+    --hover-color: #677bc4;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+.wrapper {
+    display: flex;
+    width: 100%;
+}
+
+/* Sidebar */
+#sidebar {
+    width: var(--sidebar-width);
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    z-index: 999;
+    background: var(--secondary-color);
+    color: var(--text-color);
+    transition: all 0.3s;
+}
+
+#sidebar.active {
+    margin-left: -var(--sidebar-width);
+}
+
+.sidebar-header {
+    padding: 20px;
+    background: var(--primary-color);
+    text-align: center;
+}
+
+.bot-logo {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.sidebar-header h3 {
+    margin: 0;
+    font-size: 1.5em;
+}
+
+#sidebar ul.components {
+    padding: 20px 0;
+}
+
+#sidebar ul li a {
+    padding: 15px 20px;
+    font-size: 1.1em;
+    display: block;
+    color: var(--text-color);
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+#sidebar ul li a:hover,
+#sidebar ul li.active > a {
+    background: var(--primary-color);
+}
+
+#sidebar ul li a i {
+    margin-right: 10px;
+}
+
+/* Content */
+#content {
+    width: calc(100% - var(--sidebar-width));
+    margin-left: var(--sidebar-width);
+    transition: all 0.3s;
+}
+
+/* Navbar */
+.navbar {
+    background: var(--secondary-color);
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+.server-info {
+    display: flex;
+    align-items: center;
+}
+
+.server-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.server-name {
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+/* Cards */
+.card {
+    background: var(--card-bg);
+    border: none;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+    background: var(--primary-color);
+    color: var(--text-color);
+    border-bottom: none;
+    border-radius: 10px 10px 0 0 !important;
+}
+
+.card-body {
+    color: var(--text-color);
+}
+
+/* Stat Cards */
+.stat-card {
+    background: var(--card-bg);
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.stat-card-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+}
+
+.stat-card-icon i {
+    font-size: 24px;
+    color: white;
+}
+
+.stat-card-info h5 {
+    margin: 0;
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+.stat-card-info h3 {
+    margin: 5px 0 0;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+/* Tables */
+.table {
+    color: var(--text-color);
+}
+
+.table thead th {
+    border-bottom: 2px solid var(--primary-color);
+    background: var(--secondary-color);
+}
+
+.table tbody tr:hover {
+    background: rgba(114, 137, 218, 0.1);
+}
+
+/* Forms */
+.form-control, .form-select {
+    background-color: var(--secondary-color);
+    border: 1px solid var(--primary-color);
+    color: var(--text-color);
+}
+
+.form-control:focus, .form-select:focus {
+    background-color: var(--secondary-color);
+    border-color: var(--hover-color);
+    color: var(--text-color);
+    box-shadow: 0 0 0 0.25rem rgba(114, 137, 218, 0.25);
+}
+
+/* Buttons */
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+    background-color: var(--hover-color);
+    border-color: var(--hover-color);
+}
+
+/* Page Content */
+.page-content {
+    display: none;
+    padding: 20px;
+}
+
+.page-content.active {
+    display: block;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #sidebar {
+        margin-left: -var(--sidebar-width);
+    }
+    
+    #sidebar.active {
+        margin-left: 0;
+    }
+    
+    #content {
+        width: 100%;
+        margin-left: 0;
+    }
+    
+    #content.active {
+        margin-left: var(--sidebar-width);
+        width: calc(100% - var(--sidebar-width));
+    }
+}
+
+/* Charts */
+canvas {
+    width: 100% !important;
+    height: 300px !important;
+} 

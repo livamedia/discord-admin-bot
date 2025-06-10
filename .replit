@@ -1,4 +1,4 @@
-run = "bash start.sh"
+run = "npm install && npm start"
 entrypoint = "src/index.js"
 
 [nix]

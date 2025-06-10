@@ -21,6 +21,23 @@ const client = new Client({
     ]
 });
 
+// Hata yönetimi
+client.on('error', error => {
+    console.error('Discord bot hatası:', error);
+});
+
+client.on('disconnect', () => {
+    console.log('Bot Discord\'dan ayrıldı, yeniden bağlanmaya çalışılıyor...');
+});
+
+client.on('reconnecting', () => {
+    console.log('Bot yeniden bağlanıyor...');
+});
+
+client.on('resume', () => {
+    console.log('Bot bağlantısı yeniden sağlandı!');
+});
+
 client.once(Events.ClientReady, (c) => {
     console.log(`✅ ${c.user.tag} başarıyla giriş yaptı!`);
     client.user.setActivity('!yardım | Admin Bot', { type: 'WATCHING' });
